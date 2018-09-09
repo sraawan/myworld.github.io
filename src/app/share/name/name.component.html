@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col text-center border-bottom">
+      <h1>Names</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 d-flex justify-content-end">
+      <b>Name</b>
+    </div>
+    <div class="col-6">
+      {{name}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 d-flex justify-content-end">
+      <b>Native Name</b>
+    </div>
+    <div class="col-6" *ngIf="nativeName">
+      {{nativeName}}
+    </div>
+    <div class="col-6" *ngIf="!nativeName">
+      N/A
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 d-flex justify-content-end">
+      <b>Capital</b>
+    </div>
+    <div class="col-6" *ngIf="capital">
+      {{capital}}
+    </div>
+    <div class="col-6" *ngIf="!capital">
+      N/A
+    </div>
+  </div>

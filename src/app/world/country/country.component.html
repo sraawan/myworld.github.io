@@ -1,0 +1,37 @@
+<div class="container">
+  <div>
+      <button type="button" class="btn btn-primary" (click)="goHome()">Home</button>
+    <button type="button" class="btn btn-primary" (click)="goBackToPreviousPage()">Go Back</button>
+    
+  </div>
+  </div>
+
+<br>
+<div class="container-full text-success col-margin bg-dark" *ngIf="country.length!=0"  >
+    <div class="row d-flex justify-content-center" >
+      <div class="col-lg-6 col-12" >
+        <img [src]="country[0].flag" style="width:100%;">
+      </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12 bold">
+            <h1>{{country[0].name}}</h1>
+        </div>
+      </div>
+  </div>
+  <div class="container" *ngIf="country.length!=0">
+      <div class="row">
+          <div class="col-lg-6 col-12 col-margin">
+            <app-code [alpha2Code]="country[0].alpha2Code" [alpha3Code]="country[0].alpha3Code" [numericCode]="country[0].numericCode" [callingCodes]="country[0].callingCodes" [currencies]="country[0].currencies" [topLevelDomain]="country[0].topLevelDomain" (notify)="getCountriesWithCurrency($event)"></app-code>
+          </div>
+          <div class="row">
+              <div class="col-lg-6 col-12 col-margin">
+                  <app-language [languages] = "country[0].languages"></app-language>
+              </div>
+              <div class="col-lg-6 col-12 col-margin">
+                <app-name [name]="country[0].name" [nativeName]="country[0].nativeName" [capital]="country[0].capital" ></app-name>
+            </div>
+          </div>
+          
+          </div>
+</div>

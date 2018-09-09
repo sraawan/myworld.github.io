@@ -1,0 +1,26 @@
+
+<div class="card card-margin border border-warning" >
+    <img class="card-img-top" [src]="img" alt="Card image cap" style="height:30vh;">
+    <div class="card-body">
+      <h5 class="card-title">{{countryName}}</h5>
+      <p class="card-text">
+          <span *ngIf="capital">
+              <b>Capital:</b> {{capital}}</span>
+            <span *ngIf="!capital">
+              <b>Capital:</b> N/A</span>
+            <br>
+            <span *ngIf="subregion">
+              <b>Sub Region:</b> {{subregion}}</span>
+            <span *ngIf="!subregion">
+              <b>Sub Region:</b> N/A</span>
+            <br>
+            <span *ngIf="population">
+              <b>population:</b> {{population}}</span>
+            <span *ngIf="!population">
+              <b>population:</b> N/A</span>
+           
+          </p>
+      <a [routerLink]="['/country',countryName]" class="btn btn-primary"> Some More...</a>
+    </div>
+  </div>
+  
